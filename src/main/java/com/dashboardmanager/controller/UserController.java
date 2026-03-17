@@ -94,6 +94,8 @@ public class UserController {
                 case "low":
                     extension = ".jpg";
                     break;
+                default:
+                    return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
             }
             String imageFile = FileUtils.getInstance().getUserImagePath(request.getRemoteUser()) + extension;
             final ByteArrayResource inputStream = new ByteArrayResource(fileCache.getFileBytes(imageFile));
