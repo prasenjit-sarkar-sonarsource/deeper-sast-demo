@@ -18,7 +18,7 @@ public class FileUtils {
 
     public String getUserImagePath(String username) {
         String path = getImagePath();
-        path += EncodingUtils.getInstance().decodeParameter(username);
+        path += EncodingUtils.decodeParameter(username);
         return path;
     }
 }
