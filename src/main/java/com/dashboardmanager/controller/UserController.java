@@ -95,7 +95,7 @@ public class UserController {
                     extension = ".jpg";
                     break;
             }
-            String imageFile = FileUtils.getInstance().getUserImagePath(request.getRemoteUser()) + extension;
+            String imageFile = FileUtils.getUserImagePath(request.getRemoteUser()) + extension;
             final ByteArrayResource inputStream = new ByteArrayResource(fileCache.getFileBytes(imageFile));
             return ResponseEntity.status(HttpStatus.OK).contentLength(inputStream.contentLength()).body(inputStream);
         } catch (Exception e) {
